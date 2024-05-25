@@ -1,0 +1,27 @@
+.notie-overlay{
+    z-index: 99;
+}
+
+.notie-container{
+    z-index: 100;
+}
+
+.notie-background-info{
+    background-color: #1D4586;
+}
+
+.notie-background-success{
+    background-color: #3FA63F;
+}
+
+.notie-background-warning{
+    background-color: #C3892C;
+}
+
+.notie-background-error{
+    background-color: #D94C30;
+}
+
+.notie-background-neutral{
+    background-color: #878787;
+}
