@@ -8,6 +8,8 @@
 
  <p>Os dados do usuário estão sendo salvos <strong>pelo banco de dados indexado do navegador</strong> e após o login, é possível alterar os dados pessoais e preferências.</p>
 
+ <p>O projeto não está hospedado, pois o plano gratuito da News API só funciona durante o processo de desenvolvimento.</p>
+
  <p>Espero que gostem :D</p>
 
- <p>Link do vídeo: <strong>https://www.youtube.com/watch?v=fCXek3APADc</strong></p>
+ <p>Link do vídeo do Matheus Battisti: <strong>https://www.youtube.com/watch?v=fCXek3APADc</strong></p>
