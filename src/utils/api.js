@@ -37,16 +37,25 @@ export const getTopRecentNews = async (category, country) => {
         {
             if('geolocation' in navigator)
             {
-                const position = await new Promise((resolve, reject) => {
-                    navigator.geolocation.getCurrentPosition(resolve, reject);
-                });
-                
-                let latitude = position.coords.latitude;
-                let longitude = position.coords.longitude;
-    
-                country = await getUserCountry(latitude, longitude);
+                try
+                {
+                    const position = await new Promise((resolve, reject) => {
+                        navigator.geolocation.getCurrentPosition(resolve, reject);
+                    });
+                    
+                    let latitude = position.coords.latitude;
+                    let longitude = position.coords.longitude;
+        
+                    country = await getUserCountry(latitude, longitude);
+                }
+                catch(error)
+                {
+                    if(error.message === 'User denied Geolocation')
+                    {
+                        country = 'br';
+                    }
+                }
             }
-            else { country = 'br'; }
         }
 
         const key = await getApiKey();
