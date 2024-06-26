@@ -8,7 +8,7 @@
 
  <p>Os dados do usuário estão sendo salvos <strong>pelo banco de dados indexado do navegador</strong> e após o login, é possível alterar os dados pessoais e preferências.</p>
 
- <p>O projeto não está hospedado, pois o plano gratuito da News API só funciona durante o processo de desenvolvimento.</p>
+ <p>O projeto não está hospedado, pois o plano gratuito da News API funciona apenas durante o processo de desenvolvimento.</p>
 
  <p>Espero que gostem :D</p>
 
