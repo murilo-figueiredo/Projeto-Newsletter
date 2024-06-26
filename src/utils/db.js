@@ -2,32 +2,20 @@ import CryptoJS from "crypto-js";
 
 let database, transaction, objectStore, request, loggedUser;
 
-const getHashKey = /*async*/ () => {
-    // try
-    // {
-        const key = import.meta.env.VITE_HASH_KEY;
-    //     const response = await fetch('keys/hash-key.txt', {
-    //         mode: 'same-origin'
-    //     });
-    //     const key = await response.text();
-        
-        return key;
-    // }
-    // catch(error)
-    // {
-    //     console.error(`Ocorreu um erro: ${error}`);
-    // }
+const getHashKey = () => {
+    const key = import.meta.env.VITE_HASH_KEY;
+    return key;
 };
 
-const encryptPassword = async (password) => {
-    const key = await getHashKey();
+const encryptPassword = (password) => {
+    const key = getHashKey();
     let encryptedPassword = CryptoJS.AES.encrypt(password, key).toString();
 
     return encryptedPassword;
 };
 
-const decryptPassword = async (password) => {
-    const key = await getHashKey();
+const decryptPassword = (password) => {
+    const key = getHashKey();
     let bytes = CryptoJS.AES.decrypt(password, key);
     let decryptedPassword = JSON.stringify(bytes.toString(CryptoJS.enc.Utf8));
 
@@ -108,7 +96,7 @@ const openDb = () => {
 
 export const insertUser = async (name, email, password) => {
     let emailIsRegistered;
-    password = await encryptPassword(password);
+    password = encryptPassword(password);
 
     return new Promise(async (resolve, reject) => {
         try
@@ -229,7 +217,7 @@ export const findUser = async (email, password) => {
 };
 
 export const alterUser = async (id, newName, newPassword) => {
-    let hashedNewPassword = await encryptPassword(newPassword);
+    let hashedNewPassword = encryptPassword(newPassword);
 
     return new Promise(async (resolve, reject) => {
         try

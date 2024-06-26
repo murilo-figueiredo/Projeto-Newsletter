@@ -1,18 +1,6 @@
-const getApiKey = /*async*/ () => {
-    // try
-    // {
-        const key = import.meta.env.VITE_API_KEY;
-        // const response = await fetch('keys/api-key.txt', {
-        //     mode: 'same-origin'
-        // });
-        // const key = await response.text();
-
-        return key;
-    // }
-    // catch(error)
-    // {
-    //     console.error(`Ocorreu um erro: ${error}`);
-    // }
+const getApiKey = () => {
+    const key = import.meta.env.VITE_API_KEY;
+    return key;
 };
 
 export const getTopRecentNews = async (category, country) => {
@@ -56,7 +44,7 @@ export const getTopRecentNews = async (category, country) => {
             }
         }
 
-        const key = /*await*/ getApiKey();
+        const key = getApiKey();
         const url = `https://newsapi.org/v2/top-headlines?category=${category}&country=${country}&apiKey=${key}`;
         
         const response = await fetch(url);
@@ -75,7 +63,7 @@ export const searchNews = async (topic, language, criterion) => {
 
     try
     {
-        const key = /*await*/ getApiKey();
+        const key = getApiKey();
         const url = `https://newsapi.org/v2/everything?q=${topic}&language=${language}&sortBy=${criterion}&apiKey=${key}`;
         
         const response = await fetch(url);
