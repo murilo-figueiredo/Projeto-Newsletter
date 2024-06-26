@@ -2,20 +2,21 @@ import CryptoJS from "crypto-js";
 
 let database, transaction, objectStore, request, loggedUser;
 
-const getHashKey = async () => {
-    try
-    {
-        const response = await fetch('keys/hash-key.txt', {
-            mode: 'same-origin'
-        });
-        const key = await response.text();
+const getHashKey = /*async*/ () => {
+    // try
+    // {
+        const key = import.meta.env.VITE_HASH_KEY;
+    //     const response = await fetch('keys/hash-key.txt', {
+    //         mode: 'same-origin'
+    //     });
+    //     const key = await response.text();
         
         return key;
-    }
-    catch(error)
-    {
-        console.error(`Ocorreu um erro: ${error}`);
-    }
+    // }
+    // catch(error)
+    // {
+    //     console.error(`Ocorreu um erro: ${error}`);
+    // }
 };
 
 const encryptPassword = async (password) => {
