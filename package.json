@@ -1,5 +1,4 @@
 {
-  "homepage": "https://murilo-figueiredo.github.io/Projeto-Newsletter/",
   "name": "projeto-newsletter",
   "private": true,
   "version": "0.0.0",
@@ -8,14 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
-    "gh-pages": "^6.1.1",
     "notie": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
